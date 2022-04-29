@@ -7,7 +7,7 @@ let getPosts = () => {
         try {
             await new Promise((resolve, reject) => {
                 // resolve();
-                setTimeout(resolve, 2000);
+                setTimeout(resolve, 1000);
             })
             let response = await fetch("http://localhost:3000/posts");
             if (response.status === 404) {

@@ -1,5 +1,5 @@
 <template>
-<form>
+<form @submit.prevent="addPost">
     <h1 class="">Create Post</h1>
   <label>Title</label>
   <input type="text" required v-model="title">
@@ -13,7 +13,7 @@
         {{tag}}
   </div>
 
-  <button class="btn btn-success">Add Post</button>
+  <button class="btn btn-success" >Add Post</button>
 </form>
 
 </template>
@@ -26,14 +26,32 @@ export default {
             let body=ref("");
             let tag=ref("");
             let tags=ref([]);
+            
             let handleKeydown=()=>{
                         if(!tags.value.includes(tag.value)){
                                 tags.value.push(tag.value)
                         }
                         tag.value=""
+            } 
+            let addPost=async()=>{
+                   await fetch("http://localhost:3000/posts",{
+                        method:"POST",
+                        headers:{
+                            "Content-type":"application/json"
+                        },
+                        body:JSON.stringify(
+                            {
+                                title:title.value,
+                                body:body.value,
+                                tags:tags.value
+                            }
+                        )
+                        })
+                        
             }
 
-            return{title,body,tag,handleKeydown,tags}
+
+            return{title,body,tag,handleKeydown,tags,addPost}
         }
 }
 </script>

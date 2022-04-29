@@ -1,7 +1,6 @@
 <template>
 <div class="spin">
 </div>
-<p>Loading ...</p>
 </template>
 
 <script>
