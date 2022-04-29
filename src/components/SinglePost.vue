@@ -3,6 +3,7 @@
      <h2>{{post.title}}</h2>
     <p>{{cutPostBody}}</p>
   </router-link>
+  
 </template>
 
 <script>

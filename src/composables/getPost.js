@@ -5,6 +5,10 @@ let getPost = (id) => {
     let error = ref("");
 
     let load = async() => {
+        await new Promise((resolve, reject) => {
+            // resolve();
+            setTimeout(resolve, 2000);
+        })
         try {
             let response = await fetch("http://localhost:3000/posts/" + id);
             if (response.status === 404) {

@@ -6,17 +6,19 @@
     <div v-if="posts.length > 0">
       <PostsList :posts="posts"></PostsList>
     </div>
-    <div v-else>loading.....</div>
+    <div v-else><Spinner></Spinner></div>
   </div>
 </template>
 
 <script>
+import Spinner from '../components/Spinner'
 import PostsList from "../components/PostsList";
 import getPosts from "../composables/getPosts"
 
 
 export default {
-  components: { PostsList },
+  components: {
+    Spinner, PostsList },
   setup() {
     let {posts,error,load}=getPosts()
     load();
