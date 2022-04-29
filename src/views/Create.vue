@@ -20,8 +20,10 @@
 
 <script>
 import { ref } from '@vue/reactivity'
+import { useRouter} from 'vue-router'
 export default {
         setup(){
+            let router =useRouter();//this.$router
             let title=ref("");
             let body=ref("");
             let tag=ref("");
@@ -47,11 +49,12 @@ export default {
                             }
                         )
                         })
+                        router.push("/");
                         
             }
 
 
-            return{title,body,tag,handleKeydown,tags,addPost}
+            return{title,body,tag,handleKeydown,tags,addPost,router}
         }
 }
 </script>

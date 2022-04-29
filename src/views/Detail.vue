@@ -1,6 +1,6 @@
 <template>
  
-  <div v-if="post">
+  <div v-if="post" class="post">
       <h2>{{post.title}}</h2>
       <p>{{post.body}}</p>
      

@@ -7,10 +7,12 @@
       <PostsList :posts="posts"></PostsList>
     </div>
     <div v-else><Spinner></Spinner></div>
+    
   </div>
 </template>
 
 <script>
+import Navbar from '../components/Navbar'
 import Spinner from '../components/Spinner'
 import PostsList from "../components/PostsList";
 import getPosts from "../composables/getPosts"
@@ -18,6 +20,7 @@ import getPosts from "../composables/getPosts"
 
 export default {
   components: {
+    Navbar,
     Spinner, PostsList },
   setup() {
     let {posts,error,load}=getPosts()
