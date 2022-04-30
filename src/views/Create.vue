@@ -12,7 +12,7 @@
   <div v-for="tag in tags" :key="tag" class="pill">
         {{tag}}
   </div>
-
+<br><br>
   <button class="btn btn-success" >Add Post</button>
 </form>
 
