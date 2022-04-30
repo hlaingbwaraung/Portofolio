@@ -4,7 +4,9 @@
      <h2>{{post.title}}</h2>
     <p>{{cutPostBody}}</p>
     <div v-for="tag in post.tags" :key="tag" class="pill">
-        {{tag}}
+        <router-link :to="{name:'Tag',params:{tag}}">
+          {{tag}}
+        </router-link>
     </div>
   </router-link>
   
