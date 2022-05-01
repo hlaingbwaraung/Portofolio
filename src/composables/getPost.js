@@ -1,3 +1,5 @@
+import { db } from "@/firebase/config";
+
 const { ref } = require("vue");
 
 let getPost = (id) => {
@@ -10,12 +12,8 @@ let getPost = (id) => {
         //     setTimeout(resolve, 1000);
         // })
         try {
-            let response = await fetch("http://localhost:3000/posts/" + id);
-            if (response.status === 404) {
-                throw new Error("not found url");
-            }
-            let data = await response.json();
-            post.value = data;
+            let doc = await db.collection("posts").doc(id).get()
+            post.value = { id: doc.id, ...doc.data() }
         } catch (err) {
             error.value = err.message;
         }

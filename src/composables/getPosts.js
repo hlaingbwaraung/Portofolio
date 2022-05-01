@@ -6,7 +6,9 @@ let getPosts = () => {
     let load = async() => {
         try {
             let res = await db.collection("posts").get()
-            console.log(res);
+            posts.value = res.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() }
+            })
         } catch (err) {
             // console.log(err.message);
             error.value = err.message;
