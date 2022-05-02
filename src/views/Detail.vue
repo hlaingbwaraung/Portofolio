@@ -29,9 +29,9 @@ export default {
     let deletePost = async()=>{
      let id = props.id;
      await db.collection("posts").doc(id).delete();
-     router.push("/")
+     router.push("/");
     }
-    return{post,error,deletePost,router}
+    return{post,error,deletePost}
   }
 }
 </script>

@@ -21,7 +21,7 @@
 <script>
 import { ref } from '@vue/reactivity'
 import { useRouter} from 'vue-router'
-import {db } from "../firebase/config"
+import {db,timestamp } from "../firebase/config"
  
 export default {
         setup(){
@@ -41,7 +41,8 @@ export default {
                   let newPost=   {
                                 title:title.value,
                                 body:body.value,
-                                tags:tags.value
+                                tags:tags.value,
+                                created_at:timestamp()
                             }
                          let res = await  db.collection("posts").add(newPost)
                        
@@ -93,15 +94,52 @@ export default {
     transform: rotateZ(-1.5deg);
   }
   .pill {
-    display: inline-block;
-    margin: 10px 10px 0 0;
-    color: #444;
-    background: #ddd;
-    padding: 8px;
-    border-radius: 20px;
-    font-size: 14px;
+     background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
   }
+a:link {
+  text-decoration: none;
+}
 
- 
+ .pill::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.pill::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.pill:hover {
+  background-color: rgb(169, 169, 169);
+  color: white;
+}
+
+.pill:hover::after {
+   border-left-color: rgb(169, 169, 169); 
+}
  
 </style>
