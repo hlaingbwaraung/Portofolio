@@ -6,6 +6,9 @@ import Tag from "../views/Tag.vue"
 import Blog from "../views/Blog.vue"
 import Contact from "../views/Contact.vue"
 import Chat from "../views/Chat.vue"
+import Chatroom from "../views/Chatroom.vue"
+import { auth } from "../firebase/config"
+
 import "../assets/global.css"
 
 const routes = [{
@@ -47,6 +50,20 @@ const routes = [{
         name: 'Chat',
         component: Chat
     },
+    {
+        path: '/chatroom',
+        name: 'Chatroom',
+        component: Chatroom,
+        beforeEnter(to, from, next) {
+            let user = auth.currentUser;
+
+            if (user) {
+                next();
+            } else [
+                next({ name: "Chat" })
+            ]
+        }
+    }
 ]
 
 const router = createRouter({

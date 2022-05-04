@@ -12,20 +12,22 @@
 import { ref } from "@vue/reactivity";
 import { auth } from "../firebase/config";
 import useLogin from "../composables/useLogin";
+import { useRouter} from 'vue-router'
 
 export default {
   setup() {
     let email = ref("");
     let password = ref("");
+     let router =useRouter();
     let { error, signIn } = useLogin();
 
     let login = async () => {
       let res = await signIn(email.value, password.value);
       if (res) {
-        console.log(res.user);
+      router.push("/chatroom");
       }
     };
-    return { email, password, login, error };
+    return { email, password, login, error ,useRouter};
   },
 };
 </script>

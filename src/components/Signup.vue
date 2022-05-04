@@ -12,8 +12,10 @@
 <script>
 import { ref } from "@vue/reactivity";
 import useSignup from "../composables/useSignup";
+import { useRouter} from 'vue-router'
 export default {
   setup() {
+    let router = useRouter();
     let displayName = ref("");
     let email = ref("");
     let password = ref("");
@@ -26,10 +28,10 @@ export default {
         displayName.value
       );
       if (res) {
-        console.log(res.user);
+        router.push("/chatroom");
       }
     };
-    return { displayName, email, password, signUp, error };
+    return { displayName, email, password, signUp, error,router };
   },
 };
 </script>
