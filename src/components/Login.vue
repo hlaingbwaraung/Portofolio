@@ -1,29 +1,33 @@
 <template>
   <h1>Log In</h1>
   <form @submit.prevent="login">
-  <input type="email" placeholder="Email" v-model="email">
-  <input type="password" placeholder="password" v-model="password">
-  <button class="btn btn-success">Log In</button>
-</form>
+    <input type="email" placeholder="Email" v-model="email" />
+    <input type="password" placeholder="password" v-model="password" />
+    <div class="error" v-if="error">{{ error }}</div>
+    <button class="btn btn-success">Log In</button>
+  </form>
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+import { ref } from "@vue/reactivity";
+import { auth } from "../firebase/config";
+import useLogin from "../composables/useLogin";
+
 export default {
-    setup(){
-  
-        let email = ref("");
-        let password = ref("");
-        let login =()=>{
- 
+  setup() {
+    let email = ref("");
+    let password = ref("");
+    let { error, signIn } = useLogin();
 
-        }
- return{ email,password,login}
-
-    }
-}
+    let login = async () => {
+      let res = await signIn(email.value, password.value);
+      if (res) {
+        console.log(res.user);
+      }
+    };
+    return { email, password, login, error };
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
