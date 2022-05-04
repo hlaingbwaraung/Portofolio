@@ -1,11 +1,13 @@
 <template>
   <div class="container">
       <ChatNav></ChatNav>
+      <ChatWindow></ChatWindow>
       <ChatForm></ChatForm>
   </div>
 </template>
 
 <script>
+import ChatWindow from '../components/ChatWindow'
 import ChatForm from '../components/ChatForm'
 import { watch } from '@vue/runtime-core'
 import ChatNav from '../components/ChatNav'
@@ -14,6 +16,7 @@ import {useRouter} from "vue-router"
 
 export default {
   components: {
+    ChatWindow,
     ChatForm, ChatNav },
   setup(){
       let {user} = getUser();

@@ -48,7 +48,17 @@ const routes = [{
     {
         path: '/chat',
         name: 'Chat',
-        component: Chat
+        component: Chat,
+        beforeEnter(to, from, next) {
+            let user = auth.currentUser;
+
+            if (!user) {
+                next();
+            } else [
+                next({ name: "Chatroom" })
+            ]
+        }
+
     },
     {
         path: '/chatroom',
