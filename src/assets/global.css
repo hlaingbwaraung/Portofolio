@@ -3,7 +3,7 @@ body {
     color: #444;
 }
 
-.container {
+.chatcontainer {
     width: 90%;
     max-width: 960px;
     margin: 80px auto;

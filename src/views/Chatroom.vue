@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="chatcontainer">
       <ChatNav></ChatNav>
       <ChatWindow></ChatWindow>
       <ChatForm></ChatForm>

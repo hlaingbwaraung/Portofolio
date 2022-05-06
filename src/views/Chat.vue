@@ -2,11 +2,11 @@
   <div class="form">
     <div v-if="showLoginForm">
       <Login></Login>
-      <p>Not a member?<span @click="showLoginForm=!showLoginForm"> Create account?</span></p>
+      <p class="text-right">Not a member?<span @click="showLoginForm=!showLoginForm"> Create account?</span></p>
     </div>
    <div v-else>
        <Signup></Signup>
-             <p>Already Member?<span @click="showLoginForm=!showLoginForm"> Login account</span></p>
+             <p class="text-right">Already Member?<span @click="showLoginForm=!showLoginForm"> Login account</span></p>
 
    </div>
   </div>
