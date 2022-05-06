@@ -1,10 +1,12 @@
 <template>
-  <h1>Log In</h1>
+  <h1 class="text-center">Log In</h1>
   <form @submit.prevent="login">
-    <input type="email" placeholder="Email" v-model="email" />
-    <input type="password" placeholder="password" v-model="password" />
+    <div class="form-group">
+    <input type="email" class="form-control" placeholder="Email" v-model="email" />
+    <input type="password" class="form-control" placeholder="password" v-model="password" />
     <div class="error" v-if="error">{{ error }}</div>
     <button class="btn btn-success">Log In</button>
+    </div>
   </form>
 </template>
 
@@ -32,4 +34,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+</style>

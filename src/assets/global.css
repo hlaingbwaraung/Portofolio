@@ -1,5 +1,5 @@
 body {
-    background: #e3e1ff;
+    background: #ffffff;
     color: #444;
 }
 
@@ -10,6 +10,13 @@ body {
     border-radius: 20px;
     box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
     background: white;
+}
+
+.form {
+    max-width: 750px;
+    margin: 100px auto;
+    padding: 50px;
+    box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
 }
 
 .error {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="form">
     <div v-if="showLoginForm">
       <Login></Login>
       <p>Not a member?<span @click="showLoginForm=!showLoginForm"> Create account?</span></p>
