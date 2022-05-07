@@ -1,20 +1,23 @@
 <template>
  <div class="blogtop">
     <h1>Blog Page</h1>
-    <input type="text" placeholder="Search Blog">
+    <input type="text" placeholder="Search Blog" v-model="search">
  </div>
   <div class="blog">
     <div v-if="error">
       {{ error }}
     </div>
-    <div v-if="posts.length > 0" class="layout">
+    <div v-if="posts.length > 0"  class="layout">
       <div>
-        <PostsList :posts="posts"></PostsList>
+        <PostsList :posts="filteredSearch"></PostsList>
+        <div v-if="filteredSearch.length <= 0" class="mx-auto alert alert-danger">Sry,We not found your wanted blog ☹️</div>
       </div>
       <div><TagCloud :posts="posts"></TagCloud></div>
     </div>
     <div v-else><Spinner></Spinner></div>
   </div>
+  
+
 </template>
 
 <script>
@@ -23,6 +26,7 @@ import Navbar from "../components/Navbar";
 import Spinner from "../components/Spinner";
 import PostsList from "../components/PostsList";
 import getPosts from "../composables/getPosts";
+import { computed, ref } from '@vue/runtime-core';
 
 export default {
   components: {
@@ -30,11 +34,20 @@ export default {
     Navbar,
     Spinner,
     PostsList,
-  },
+  }, 
+
   setup() {
     let { posts, error, load } = getPosts();
+    let search=ref("");
     load();
-    return { posts, error };
+
+    let filteredSearch = computed(()=>{
+   return posts.value.filter((post)=>{
+     return post.title.includes(search.value)
+   })
+ })
+    
+    return { posts, error,search,filteredSearch};
   },
 };
 </script>
@@ -58,5 +71,55 @@ export default {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 20px;
+}
+.pill {
+     background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  }
+ .pill::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.pill::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.pill:hover {
+  background-color: rgb(169, 169, 169);
+  color: white;
+}
+
+.pill:hover::after {
+   border-left-color: rgb(169, 169, 169); 
+}
+.alert{
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  
 }
 </style>

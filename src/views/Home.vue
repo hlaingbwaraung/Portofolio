@@ -6,15 +6,16 @@
                     <h2><span>やる気</span>とは？</h2>
                     <p >&nbsp;&nbsp;&nbsp;&nbsp;世の中にいる戦争や貧困などの様々な理由で独学に大変な方と子供達を向けて完全<span>無料</span> でメンタリング付きのオンラインスクールです。やる気だけあればゼローから就職までサポート致します。より良い世界へ！
                     </p>
-                    <a href="signup" class="btn btn-primary" type="">今すぐアカウント作成</a>
+                   <router-link :to="{name: 'Chat'}"><button class="btn btn-primary">Create Acoount</button></router-link>
                 </div>
                 <div class="col-md-6 order-first order-md-last  text-center">
-                    <img src="photo/banimg.png" class=" img-fluid">
+                    <img src="../photo/banimg.png" class=" img-fluid">
                 </div>
             </div>
         </div>
         <img src="../photo/wave1.png" class="bottom-img">
     </section>
+    
 </template>
 
 <script>
@@ -25,4 +26,22 @@ export default {
 
 <style>
 
+#banner {
+    padding-top: 5%;
+  background: -webkit-linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%); /* Chrome 10+, Saf5.1+ */ background: -moz-linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%); /* FF3.6+ */ background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%); /* W3C */
+
+}
+
+#banner h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#banner .btn-primary {
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: tomato;
+}
 </style>

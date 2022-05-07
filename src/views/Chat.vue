@@ -29,8 +29,18 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+p{
+  text-align: justify;
+  font-size: 15px;
+  letter-spacing: 2px;
+  float: right;
+}
+span{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  color: rgb(44, 150, 243);
+}
 
 
 </style>
