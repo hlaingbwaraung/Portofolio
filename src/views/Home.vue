@@ -15,7 +15,30 @@
         </div>
         <img src="../photo/wave1.png" class="bottom-img">
     </section>
-    
+     <section id="services">
+        <div class="container text-center ">
+            <h1 class="title animated">サービス</h1>
+            <div class="row text-center">
+                <div class="col-md-4  services animated d-1">
+                    <img src="photo/service1.png" class="service-img">
+                    <h4>日本語コース</h4>
+                    <p>漢字、聴解、ビジネス会話、IT用語など様々な知識を日本にいる方、また日本人がメンタリングいたします。</p>
+                </div>
+                <div class="col-md-4 services animated d-2">
+                    <img src="photo/service3.png" class="service-img">
+                    <h4>プログラミングコース</h4>
+                    <p>WEB業界のフロントエンドやバックエンドを現場のエンジニアから メンタリングいたします。
+                    </p>
+                </div>
+                <div class="col-md-4  services animated d-3">
+                    <img src="photo/service2.png" class="service-img ">
+                    <h4>キャリアサポート</h4>
+                    <p>日本語とITスキルが身につけた後は日本のIT企業に入社するまで精一杯でサポート致します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
