@@ -6,16 +6,12 @@
 </template>
 
 <script>
-import SinglePost from './SinglePost'
+import SinglePost from "./SinglePost";
 export default {
   components: { SinglePost },
-    props:["posts"],
-    setup(props){
-      
-    }
-}
+  props: ["posts"],
+  setup(props) {},
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

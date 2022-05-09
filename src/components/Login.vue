@@ -21,7 +21,7 @@
               v-model="password"
             />
             <div class="error" v-if="error">{{ error }}</div>
-            <button class="btn btn-success">Log In</button>
+            <button>Log In</button>
           </div>
         </form>
       </div>

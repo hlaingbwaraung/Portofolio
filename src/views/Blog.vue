@@ -1,7 +1,7 @@
 <template>
  <div class="blogtop">
     <h1>Blog Page</h1>
-    <input type="text" placeholder="Search Blog" v-model="search">
+    <input  class="input" type="text" placeholder="Search Blog" v-model="search">
  </div>
   <div class="blog">
     <div v-if="error">
@@ -56,7 +56,7 @@ export default {
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 .blogtop input{
  border: 1px solid rgb(156, 156, 156);
