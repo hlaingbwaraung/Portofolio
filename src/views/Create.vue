@@ -1,6 +1,9 @@
 <template>
   <form @submit.prevent="addPost" class="createcss">
     <h1 class="">Create Post</h1>
+    <label for="product_image">Product Images</label>
+    <input type="file" @change="uploadImage" class="form-control" />
+
     <label>Title</label>
     <input type="text" required v-model="title" />
 
@@ -20,7 +23,7 @@
 <script>
 import { ref } from "@vue/reactivity";
 import { useRouter } from "vue-router";
-import { db, timestamp } from "../firebase/config";
+import { firebase, db, timestamp } from "../firebase/config";
 
 export default {
   setup() {
@@ -36,6 +39,33 @@ export default {
       }
       tag.value = "";
     };
+    let uploadImage = (e) => {
+      if (e.target.files[0]) {
+        let file = e.target.files[0];
+
+        var storageRef = firebase
+          .storage()
+          .ref("posts/" + Math.random() + "_" + file.name);
+
+        let uploadTask = storageRef.put(file);
+
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {},
+          (error) => {
+            // Handle unsuccessful uploads
+          },
+          () => {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+              console.log(downloadURL);
+            });
+          }
+        );
+      }
+    };
     let addPost = async () => {
       let newPost = {
         title: title.value,
@@ -45,10 +75,19 @@ export default {
       };
       let res = await db.collection("posts").add(newPost);
 
-      router.push("/");
+      router.push("/blog");
     };
 
-    return { title, body, tag, handleKeydown, tags, addPost, router };
+    return {
+      title,
+      body,
+      tag,
+      handleKeydown,
+      tags,
+      addPost,
+      router,
+      uploadImage,
+    };
   },
 };
 </script>
@@ -70,7 +109,6 @@ textarea {
 textarea {
   height: 160px;
 }
-
 
 a:link {
   text-decoration: none;

@@ -1,20 +1,14 @@
 <template>
-
-    <footer class="text-center text-lg-start">
-        <div class="container-fluid">
+  <footer class="text-center text-lg-start">
+    <div class="container-fluid">
       <div class="container d-flex justify-content-center py-5">
-        <button type="button" class="btn btn-lg btn-floating mx-2">
-          <i class="bi bi-facebook"></i>
-        </button>
-        <button type="button" class="btn btn-lg btn-floating mx-2">
-          <i class="bi bi-youtube"></i>
-        </button>
-        <button type="button" class="btn btn-lg btn-floating mx-2">
-          <i class="bi bi-instagram"></i>
-        </button>
-        <button type="button" class="btn btn-lg btn-floating mx-2">
-          <i class="bi bi-twitter"></i>
-        </button>
+        <i class="sns bi bi-facebook"></i>
+
+        <i class="sns bi bi-youtube"></i>
+
+        <i class="sns bi bi-instagram"></i>
+
+        <i class="sns bi bi-twitter"></i>
       </div>
 
       <div class="fs-6 text-center text-white p-3">
@@ -22,9 +16,8 @@
         <i class="bi bi-balloon-heart"></i> by
         <span>Yaruki.com</span>
       </div>
-       </div>
-    </footer>
- 
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -38,7 +31,8 @@ footer {
   bottom: 0;
   background-color: black;
 }
-button {
+.sns {
+  margin: 10px;
   padding: 6px 9px;
   text-decoration: none !important;
   background-color: transparent !important;
@@ -52,10 +46,10 @@ span {
 i:hover {
   color: white;
 }
-button {
+i {
   transition: 0.5s;
 }
-button:hover {
+i:hover {
   transform: translateY(-8px);
 }
 </style>

@@ -5,7 +5,6 @@
       <div class="row">
         <div class="col-md-6">
           <div class="contact">
-           
             <form class="contactForm" @submit.prevent="sendForm">
               <label>お名前<span>*</span></label>
               <input type="text" v-model="name" required />
@@ -18,12 +17,12 @@
 
               <label>メッセージ <span>*</span></label>
               <textarea rows="2" cols="20" v-model="message"></textarea>
-            <div v-if="showDone" class=".text-danger">ご連絡ありがとうございます。</div>
-             
+              <div v-if="showDone" class="text-success">
+                ご連絡ありがとうございます。
+              </div>
 
               <button>送信</button>
             </form>
-           
           </div>
         </div>
         <div class="col-md-6">
@@ -45,12 +44,14 @@ export default {
     let email = ref("");
     let phnumber = ref("");
     let message = ref("");
-    let showDone =ref(false);
+    let showDone = ref(false);
+    let sum = () => {
+      showDone.value = false;
+    };
     let { error, addDoc } = useCollection("contact");
 
-    let sendForm = async () => {
-      
 
+    let sendForm = async () => {
       let contactMsg = {
         name: name.value,
         email: email.value,
@@ -58,17 +59,18 @@ export default {
         message: message.value,
         created_at: timestamp(),
       };
+
       await addDoc(contactMsg);
 
       name.value = "";
       email.value = "";
       phnumber.value = "";
       message.value = "";
-      showDone.value = true;
-      
-     
+      showDone.value = setTimeout(() => {
+        sum();
+      }, 3000);
     };
-    return { name, email, phnumber, message,error,sendForm,showDone};
+    return { name, email, phnumber, message, error, sendForm, showDone, sum };
   },
 };
 </script>
