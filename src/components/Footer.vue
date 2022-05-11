@@ -27,9 +27,6 @@ export default {};
 <style scoped>
 footer {
   width: 100%;
-  bottom: 0;
-  left: 0;
-  flex: 0 0 auto;
   background-color: black;
 }
 .sns {

@@ -42,13 +42,13 @@ export default {
 .container {
   position: relative;
   margin: 50px auto;
-  padding: 40px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .form {
-  padding: 20px;
+  padding: 10px;
 }
 p {
   text-align: justify;

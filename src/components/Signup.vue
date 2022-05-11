@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img src="../photo/1.png" class="img-fluid rounded-start" />
+        <img src="../photo/login.png" class="img-fluid rounded-start" />
       </div>
       <div class="col-md-6">
         <h1 class="text-center">Sign Up</h1>

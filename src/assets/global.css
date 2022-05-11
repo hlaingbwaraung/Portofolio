@@ -1,7 +1,7 @@
 body {
     background: #ffffff;
     color: #444;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .chatcontainer {
@@ -26,7 +26,8 @@ body {
 
 /* From uiverse.io by @namecho */
 
-button,
+
+/* button,
 button::after {
     padding: 16px 20px;
     font-size: 18px;
@@ -109,4 +110,4 @@ button:hover::after {
         clip-path: var(--slice-1);
         transform: translate(0);
     }
-}
+} */

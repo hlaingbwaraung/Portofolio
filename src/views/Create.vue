@@ -2,15 +2,11 @@
   <form @submit.prevent="addPost" class="createcss">
     <h1 class="">Create Post</h1>
 
+    <img :src="picture" />
+    <br />
 
-        <img  :src="picture">
-        <br>
-  
-    
     <input type="file" @change="uploadImage" class="form-control" />
-   
 
-   
     <label>Title</label>
     <input type="text" required v-model="title" />
 
@@ -49,25 +45,22 @@ export default {
     };
 
     let uploadImage = (e) => {
-     
-
       if (e.target.files[0]) {
         let file = e.target.files[0];
 
         var storageRef = firebase
           .storage()
-          .ref("posts/" + file.name);
+          .ref("posts/" + Math.random() + "_" + file.name);
 
         let uploadTask = storageRef.put(file);
 
         uploadTask.on(
           "state_changed",
           (snapshot) => {},
-          (error) => {
-          },
+          (error) => {},
           () => {
             uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            picture.value = downloadURL; 
+              picture.value = downloadURL;
             });
           }
         );
@@ -78,7 +71,7 @@ export default {
         title: title.value,
         body: body.value,
         tags: tags.value,
-        picture:picture.value,
+        picture: picture.value,
         created_at: timestamp(),
       };
       let res = await db.collection("posts").add(newPost);
@@ -95,7 +88,7 @@ export default {
       addPost,
       router,
       uploadImage,
-      picture
+      picture,
     };
   },
 };
@@ -104,7 +97,8 @@ export default {
 <style>
 .createcss {
   max-width: 480px;
-  margin: 0 auto;
+  margin: 30px auto;
+
 }
 input,
 textarea {

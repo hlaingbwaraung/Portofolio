@@ -50,7 +50,6 @@ export default {
     };
     let { error, addDoc } = useCollection("contact");
 
-
     let sendForm = async () => {
       let contactMsg = {
         name: name.value,

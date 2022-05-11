@@ -11,9 +11,7 @@
             でメンタリング付きのオンラインスクールです。やる気だけあればゼローから就職までサポート致します。より良い世界へ！
           </p>
           <router-link :to="{ name: 'Chat' }"
-            ><button>
-              Create Acoount
-            </button></router-link
+            ><button>Create Acoount</button></router-link
           >
         </div>
         <div class="col-md-6 order-first order-md-last text-center">
@@ -21,10 +19,8 @@
         </div>
       </div>
     </div>
-   
-    <img src="../photo/wave1.png" class="bottom-img"  />
 
-  
+    <img src="../photo/wave1.png" class="bottom-img" />
   </section>
 
   <section id="services">
@@ -82,7 +78,7 @@
           </ul>
         </div>
         <div class="col-md-6 order-first order-md-last animated d-2">
-          <img src="../photo/gakushu.gif" class="img-fluid mt-2" />
+          <img src="../photo/service1.png" class="img-fluid mt-2" />
         </div>
       </div>
     </div>
@@ -153,7 +149,7 @@ h1 {
 #about-us ul li {
   margin: 10px 0;
 }
-.bottom-img{
+.bottom-img {
   width: 100%;
 }
 </style>

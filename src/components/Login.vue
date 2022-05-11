@@ -6,6 +6,8 @@
       </div>
       <div class="col-md-6">
         <h1 class="text-center">Log In</h1>
+        <br />
+
         <form @submit.prevent="login">
           <div class="form-group">
             <input

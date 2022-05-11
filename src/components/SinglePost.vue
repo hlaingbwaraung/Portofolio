@@ -29,7 +29,7 @@ export default {
   props: ["post"],
   setup(props) {
     let cutPostBody = computed(() => {
-      return props.post.body.substring(0, 100) + "....";
+      return props.post.body.substring(0, 50) + "....";
     });
     return { cutPostBody };
   },
@@ -41,7 +41,9 @@ export default {
   margin: 0 40px 30px;
   padding-bottom: 30px;
   border-bottom: 1px dashed #e7e7e7;
- 
+}
+.card-title,.card-body{
+  color: black;
 }
 
 </style>
