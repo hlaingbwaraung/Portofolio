@@ -4,7 +4,7 @@
       <div class="card mb-3" style="max-width: 800px">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="../photo/3.png" class="img-fluid rounded-start" />
+            <img src="../photo/1.png" class="img-fluid rounded-start" />
           </div>
           <div class="col-md-8">
             <div class="card-body">

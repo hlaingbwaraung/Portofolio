@@ -18,6 +18,6 @@ let getPost = (id) => {
             error.value = err.message;
         }
     };
-    return { post, error, load, imgUrl };
+    return { post, error, load };
 };
 export default getPost;

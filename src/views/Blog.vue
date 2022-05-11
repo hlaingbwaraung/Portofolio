@@ -10,7 +10,7 @@
     <div v-if="posts.length > 0"  class="layout">
       <div>
         <PostsList :posts="filteredSearch"></PostsList>
-        <div v-if="filteredSearch.length <= 0" class="mx-auto alert alert-danger">Sry,We not found your wanted blog ☹️</div>
+        <div v-if="filteredSearch.length <= 0" class="mx-auto alert alert-danger">Sry,We not found your wanted blog !</div>
       </div>
       <div><TagCloud :posts="posts"></TagCloud></div>
     </div>

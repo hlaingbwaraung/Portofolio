@@ -1,9 +1,16 @@
 <template>
   <form @submit.prevent="addPost" class="createcss">
     <h1 class="">Create Post</h1>
-    <label for="product_image">Product Images</label>
-    <input type="file" @change="uploadImage" class="form-control" />
 
+
+        <img  :src="picture">
+        <br>
+  
+    
+    <input type="file" @change="uploadImage" class="form-control" />
+   
+
+   
     <label>Title</label>
     <input type="text" required v-model="title" />
 
@@ -32,6 +39,7 @@ export default {
     let body = ref("");
     let tag = ref("");
     let tags = ref([]);
+    let picture = ref(null);
 
     let handleKeydown = () => {
       if (!tags.value.includes(tag.value)) {
@@ -39,13 +47,16 @@ export default {
       }
       tag.value = "";
     };
+
     let uploadImage = (e) => {
+     
+
       if (e.target.files[0]) {
         let file = e.target.files[0];
 
         var storageRef = firebase
           .storage()
-          .ref("posts/" + Math.random() + "_" + file.name);
+          .ref("posts/" + file.name);
 
         let uploadTask = storageRef.put(file);
 
@@ -53,14 +64,10 @@ export default {
           "state_changed",
           (snapshot) => {},
           (error) => {
-            // Handle unsuccessful uploads
           },
           () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-
             uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              console.log(downloadURL);
+            picture.value = downloadURL; 
             });
           }
         );
@@ -71,6 +78,7 @@ export default {
         title: title.value,
         body: body.value,
         tags: tags.value,
+        picture:picture.value,
         created_at: timestamp(),
       };
       let res = await db.collection("posts").add(newPost);
@@ -87,6 +95,7 @@ export default {
       addPost,
       router,
       uploadImage,
+      picture
     };
   },
 };

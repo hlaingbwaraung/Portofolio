@@ -29,7 +29,7 @@ export default {
     let deletePost = async () => {
       let id = props.id;
       await db.collection("posts").doc(id).delete();
-      router.push("/");
+      router.push("/blog");
     };
     return { post, error, deletePost };
   },
