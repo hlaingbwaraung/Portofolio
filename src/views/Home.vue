@@ -2,7 +2,7 @@
   <section id="banner">
     <div class="container mt-3">
       <div class="row">
-        <div class="col-md-6 ban pt-5">
+        <div class="col-md-6 p-5">
           <h2><span>やる気</span>とは？</h2>
           <p>
             &nbsp;&nbsp;&nbsp;&nbsp;世の中にいる戦争や貧困などの様々な理由で独学に大変な方と子供達を向けて完全<span
@@ -21,7 +21,10 @@
         </div>
       </div>
     </div>
-    <img src="../photo/wave1.png" class="bottom-img" />
+   
+    <img src="../photo/wave1.png" class="bottom-img"  />
+
+  
   </section>
 
   <section id="services">
@@ -36,7 +39,7 @@
           </p>
         </div>
         <div class="col-md-4 services animated d-2">
-          <img src="../photo/service3.png" class="service-img" />
+          <img src="../photo/service2.png" class="service-img" />
           <h4>プログラミングコース</h4>
           <p>
             WEB業界のフロントエンドやバックエンドを現場のエンジニアから
@@ -44,7 +47,7 @@
           </p>
         </div>
         <div class="col-md-4 services animated d-3">
-          <img src="../photo/service2.png" class="service-img" />
+          <img src="../photo/service3.png" class="service-img" />
           <h4>キャリアサポート</h4>
           <p>
             日本語とITスキルが身につけた後は日本のIT企業に入社するまで精一杯でサポート致します。
@@ -122,7 +125,7 @@ h1 {
   background-color: tomato;
 }
 .service-img {
-  width: 100px;
+  width: 200px;
 }
 .services h4 {
   padding: 5px;
@@ -149,5 +152,8 @@ h1 {
 
 #about-us ul li {
   margin: 10px 0;
+}
+.bottom-img{
+  width: 100%;
 }
 </style>

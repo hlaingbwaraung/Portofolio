@@ -2,6 +2,7 @@ import { ref } from "vue";
 import { db } from "../firebase/config"
 
 
+
 let useCollection = (collection) => {
     let error = ref(null);
     let addDoc = async(doc) => {

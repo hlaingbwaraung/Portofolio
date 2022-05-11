@@ -1,11 +1,11 @@
 <template>
-  <div class="tag">
+  <div class="tag container">
     <div v-if="error">
     {{error}}
   </div>
-  <div v-if="posts.length" class="layout">
-   <div><PostsList :posts="filteredPosts"></PostsList></div>
-   <div><TagCloud :posts="posts"></TagCloud></div>
+  <div v-if="posts.length" class="row">
+   <div class="col-md-8"><PostsList :posts="filteredPosts"></PostsList></div>
+   <div class="col-md-4 order-first order-md-last"><TagCloud :posts="posts"></TagCloud></div>
   </div>
   <div v-else>
     loading..

@@ -1,6 +1,6 @@
 <template>
   <div v-if="post" class="detailpost">
-    <img src="../photo/1.png" class="img-fluid rounded-start" />
+    <img :src="post.picture" class="img-fluid rounded-start" />
     <h2>{{ post.title }}</h2>
     <p>{{ post.body }}</p>
 

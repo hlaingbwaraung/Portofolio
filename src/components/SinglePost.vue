@@ -1,12 +1,12 @@
 <template>
   <div class="post">
     <router-link :to="{ name: 'Detail', params: { id: post.id } }">
-      <div class="card mb-3" style="max-width: 800px">
+      <div class="card" style="max-width: 800px">
         <div class="row g-0">
-          <div class="col-md-4">
-            <img src="../photo/1.png" class="img-fluid rounded-start" />
+          <div class="col-md-6">
+            <img :src="post.picture" class="img-fluid rounded-start" />
           </div>
-          <div class="col-md-8">
+          <div class="col-md-6">
             <div class="card-body">
               <h3 class="card-title">{{ post.title }}</h3>
               <p class="card-text">{{ cutPostBody }}</p>

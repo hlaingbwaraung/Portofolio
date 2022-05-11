@@ -3,16 +3,16 @@
     <h1>Blog Page</h1>
     <input  class="input" type="text" placeholder="Search Blog" v-model="search">
  </div>
-  <div class="blog">
+  <div class="blog container">
     <div v-if="error">
       {{ error }}
     </div>
-    <div v-if="posts.length > 0"  class="layout">
-      <div>
+    <div v-if="posts.length > 0" class="row">
+      <div class="col-md-8">
         <PostsList :posts="filteredSearch"></PostsList>
         <div v-if="filteredSearch.length <= 0" class="mx-auto alert alert-danger">Sry,We not found your wanted blog !</div>
       </div>
-      <div><TagCloud :posts="posts"></TagCloud></div>
+      <div class="col-md-4 order-first order-md-last"><TagCloud :posts="posts"></TagCloud></div>
     </div>
     <div v-else><Spinner></Spinner></div>
   </div>
@@ -67,11 +67,11 @@ export default {
   margin: 0 auto;
   padding: 10px;
 }
-.layout {
+/* .layout {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 20px;
-}
+} */
 .pill {
      background: #eee;
   border-radius: 3px 0 0 3px;
