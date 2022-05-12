@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar nav-default sticky-top navbar-expand-lg navbar-light bg-light"
+    class="navbar nav-default fixed-top navbar-expand-lg navbar-light bg-light"
   >
     <div class="container">
       <router-link :to="{ name: 'Home' }" class="navbar-brand"
@@ -8,7 +8,7 @@
       /></router-link>
       <button
         class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
-        type="button"
+        type="button" 
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
         aria-controls="navbarNav"
@@ -21,7 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <li class="nav-item ">
             <router-link :to="{ name: 'Home' }">Home</router-link>
           </li>
 
@@ -43,7 +43,9 @@
   </nav>
 </template>
 <script>
-export default {};
+export default {
+  
+};
 </script>
 
 <style>
@@ -149,22 +151,20 @@ export default {};
   font-size: 80px;
 }
 @media only screen and (max-width: 990px) {
-  html {
-    height: 100%;
-  }
-  body {
-    min-height: 100%;
-  }
-  .navbar-collapse {
-    padding: 0;
-  }
-
   .navbar a {
+
+    z-index: 1;
     font-size: 40px;
+
   }
   .nav-item {
+    
     text-align: center;
     padding: 30px;
+  }
+  .nav-item:hover{
+    background-color: #d8d8d8;
+    border-radius: 10px;
   }
 }
 </style>
