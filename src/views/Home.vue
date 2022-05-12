@@ -1,4 +1,6 @@
 <template>
+
+  
   <section id="banner">
     <div class="container mt-3">
       <div class="row">
@@ -11,7 +13,7 @@
             でメンタリング付きのオンラインスクールです。やる気だけあればゼローから就職までサポート致します。より良い世界へ！
           </p>
           <router-link :to="{ name: 'Chat' }"
-            ><button>Create Acoount</button></router-link
+            ><button class="button">Create Acoount</button></router-link
           >
         </div>
         <div class="col-md-6 order-first order-md-last text-center">
@@ -30,6 +32,7 @@
         <div class="col-md-4 services animated d-1">
           <img src="../photo/service1.png" class="service-img" />
           <h4>日本語コース</h4>
+          <div id="box"></div>
           <p>
             漢字、聴解、ビジネス会話、IT用語など様々な知識を日本にいる方、また日本人がメンタリングいたします。
           </p>
@@ -56,9 +59,9 @@
   <section id="about-us">
     <div class="container">
       <h1 class="title text-center animated">学習方法</h1>
-      <div class="row align-items-center tex-center p-5">
+      <div class="row align-items-center tex-center p-2">
         <div class="col-md-6 animated mt-2 font-weight-bold d-1">
-          <ul>
+          <ul >
             <li>
               <i class="bi bi-book-fill"></i
               >&nbsp;&nbsp;&nbsp;&nbsp;最強のキャリクラム
@@ -78,7 +81,7 @@
           </ul>
         </div>
         <div class="col-md-6 order-first order-md-last animated d-2">
-          <img src="../photo/service1.png" class="img-fluid mt-2" />
+          <img src="../photo/gakushu.png" class="img-fluid mt-2" />
         </div>
       </div>
     </div>
@@ -86,7 +89,12 @@
 </template>
 
 <script>
-export default {};
+
+export default {
+ 
+};
+
+
 </script>
 
 <style>

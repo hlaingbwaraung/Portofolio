@@ -7,7 +7,7 @@
         ><img src="../photo/logo.png" width="50" height="50"
       /></router-link>
       <button
-        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around"
+        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
@@ -52,10 +52,11 @@ export default {};
 }
 .navbar a {
   font-size: 20px;
-  color: #bbb;
+  color: rgb(255, 2, 2);
   text-decoration: none;
   margin-left: 20px;
 }
+
 .navbar a.router-link-active {
   color: rgb(255, 6, 6);
   font-weight: bold;
@@ -99,9 +100,6 @@ export default {};
     margin-top: 0px;
 }
 
-
-/* State when the navbar is collapsed */
-
 .navbar-toggler.collapsed .top-bar {
     position: absolute;
     top: 0px;
@@ -139,9 +137,36 @@ export default {};
     transform: rotate(-135deg);
 }
 
-/* Color of 3 lines */
 
 .navbar-toggler.collapsed .toggler-icon {
     background: linear-gradient( 263deg, rgba(252,74,74,1) 0%, rgba(0,212,255,1) 100% );
+}
+.navbar-collapse .collapse show{
+  background-color: aqua;
+  font-size: 80px;
+}
+@media only screen and (max-width: 990px) {
+ html{
+   height: 100%;
+ }
+ body{
+   min-height: 100%;
+ }
+  .navbar-collapse {
+    padding: 0;
+
+  }
+  
+  .navbar a {
+    font-size: 40px;
+ 
+  }
+  .nav-item{
+    text-align: center;
+    padding: 30px;
+
+
+  }
+   
 }
 </style>
