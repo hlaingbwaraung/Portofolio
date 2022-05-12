@@ -1,7 +1,9 @@
 <template>
-  <Navbar></Navbar>
-  <router-view />
-  <Footer></Footer>
+  <div>
+    <Navbar></Navbar>
+    <router-view />
+    <Footer></Footer>
+  </div>
 </template>
 <script>
 import Footer from "./components/Footer";

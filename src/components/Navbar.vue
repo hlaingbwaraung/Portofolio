@@ -1,13 +1,13 @@
 <template>
   <nav
-    class="navbar nav-default sticky-top navbar-expand-lg navbar-light bg-light"
+    class="navbar nav-default fixed-top navbar-expand-lg navbar-light bg-light"
   >
     <div class="container">
       <router-link :to="{ name: 'Home' }" class="navbar-brand"
         ><img src="../photo/logo.png" width="50" height="50"
       /></router-link>
       <button
-        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around"
+        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
@@ -21,9 +21,9 @@
 
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <router-link :to="{ name: 'Home' }">Home</router-link>
+        <ul class="navbar-nav ms-auto" >
+          <li class="nav-item" id="headingOne" >
+            <router-link :to="{ name: 'Home' }" data-bs-toggle="collapse" data-bs-target="#navbarNav">Home</router-link>
           </li>
           <li class="nav-item">
             <router-link :to="{ name: 'Contact' }">Contact</router-link>
@@ -43,7 +43,9 @@
   </nav>
 </template>
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style>
@@ -143,5 +145,21 @@ export default {};
 
 .navbar-toggler.collapsed .toggler-icon {
     background: linear-gradient( 263deg, rgba(252,74,74,1) 0%, rgba(0,212,255,1) 100% );
+}
+
+@media only screen and (max-width: 990px) {
+  .navbar-collapse {
+    padding: 0;
+  }
+  
+  .navbar a {
+    font-size: 40px;
+ 
+  }
+  .nav-item{
+    text-align: center;
+    padding: 30px;
+  }
+  
 }
 </style>

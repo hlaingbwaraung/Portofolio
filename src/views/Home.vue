@@ -1,5 +1,6 @@
 <template>
-  <section id="banner">
+<div>
+    <section id="banner">
     <div class="container mt-3">
       <div class="row">
         <div class="col-md-6 p-5">
@@ -11,7 +12,7 @@
             でメンタリング付きのオンラインスクールです。やる気だけあればゼローから就職までサポート致します。より良い世界へ！
           </p>
           <router-link :to="{ name: 'Chat' }"
-            ><button>Create Acoount</button></router-link
+            ><button class="button">Create Acoount</button></router-link
           >
         </div>
         <div class="col-md-6 order-first order-md-last text-center">
@@ -83,6 +84,7 @@
       </div>
     </div>
   </section>
+</div>
 </template>
 
 <script>

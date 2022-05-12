@@ -2,6 +2,7 @@ body {
     background: #ffffff;
     color: #444;
     min-height: 100vh;
+    padding-top: 100px;
 }
 
 .chatcontainer {
@@ -26,9 +27,8 @@ body {
 
 /* From uiverse.io by @namecho */
 
-
-/* button,
-button::after {
+.button,
+.button::after {
     padding: 16px 20px;
     font-size: 18px;
     background: linear-gradient(45deg, transparent 5%, #d32c2c 5%);
@@ -41,7 +41,7 @@ button::after {
     position: relative;
 }
 
-button::after {
+.button::after {
     --slice-0: inset(50% 50% 50% 50%);
     --slice-1: inset(80% -6px 0 0);
     --slice-2: inset(50% -6px 30% 0);
@@ -60,7 +60,7 @@ button::after {
     clip-path: var(--slice-0);
 }
 
-button:hover::after {
+.button:hover::after {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
 }
@@ -110,4 +110,4 @@ button:hover::after {
         clip-path: var(--slice-1);
         transform: translate(0);
     }
-} */
+}
