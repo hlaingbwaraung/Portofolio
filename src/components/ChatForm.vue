@@ -37,6 +37,7 @@ export default {
 <style>
 form {
   margin: 10px;
+  padding: 20px;
 }
 textarea {
   width: 100%;
