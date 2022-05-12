@@ -1,6 +1,7 @@
 <template>
   <footer class="text-center text-lg-start">
-    <div class="container-fluid">
+   <div>
+      <div class="container-fluid">
       <div class="container d-flex justify-content-center py-5">
         <i class="sns bi bi-facebook"></i>
 
@@ -17,6 +18,7 @@
         <span>Yaruki.com</span>
       </div>
     </div>
+   </div>
   </footer>
 </template>
 
