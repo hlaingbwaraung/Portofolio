@@ -7,21 +7,22 @@
         ><img src="../photo/logo.png" width="50" height="50"
       /></router-link>
       <button
-        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
+        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed "
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        :class="{active:collapsed}"
       >
         <span class="toggler-icon top-bar"></span>
         <span class="toggler-icon middle-bar"></span>
         <span class="toggler-icon bottom-bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto" >
-          <li class="nav-item" id="headingOne" >
+      <div class="collapse navbar-collapse" id="navbarNav" :class="{active:show}">
+        <ul class="navbar-nav ms-auto" @click="toggleNav">
+          <li class="nav-item" >
             <router-link :to="{ name: 'Home' }">Home</router-link>
           </li>
 
@@ -44,6 +45,18 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      show: false,
+      collapsed:true
+    };
+  },
+  methods:{
+      toggleNav(){
+        this.show = !this.show,
+        this.collapsed = !this.collapsed
+      }
+  }
 };
 </script>
 
@@ -151,17 +164,14 @@ export default {
 }
 @media only screen and (max-width: 990px) {
   .navbar a {
-
     z-index: 1;
     font-size: 40px;
-
   }
   .nav-item {
-    
     text-align: center;
     padding: 30px;
   }
-  .nav-item:hover{
+  .nav-item:hover {
     background-color: #d8d8d8;
     border-radius: 10px;
   }
@@ -171,15 +181,13 @@ export default {
   .navbar-collapse {
     padding: 0;
   }
-  
+
   .navbar a {
     font-size: 40px;
- 
   }
-  .nav-item{
+  .nav-item {
     text-align: center;
     padding: 30px;
   }
-  
 }
 </style>
