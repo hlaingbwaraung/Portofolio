@@ -1,16 +1,9 @@
 <template>
-<<<<<<< HEAD
   <div>
     <Navbar></Navbar>
     <router-view />
     <Footer></Footer>
   </div>
-=======
-  <Navbar></Navbar>
-  <router-view />
-  <Footer></Footer>
-  
->>>>>>> origin
 </template>
 <script>
 import Footer from "./components/Footer";
@@ -23,8 +16,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "~@/assets/scss/vendors/bootstrap-vue/index";
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

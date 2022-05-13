@@ -1,5 +1,6 @@
 <template>
- <div class="blogtop">
+ <div>
+   <div class="blogtop">
     <h1>Blog Page</h1>
     <input  class="input" type="text" placeholder="Search Blog" v-model="search">
  </div>
@@ -16,6 +17,7 @@
     </div>
     <div v-else><Spinner></Spinner></div>
   </div>
+ </div>
   
 
 </template>

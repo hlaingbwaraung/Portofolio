@@ -8,11 +8,7 @@
       /></router-link>
       <button
         class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
-<<<<<<< HEAD
         type="button"
-=======
-        type="button" 
->>>>>>> origin
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
         aria-controls="navbarNav"
@@ -24,15 +20,9 @@
         <span class="toggler-icon bottom-bar"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-<<<<<<< HEAD
         <ul class="navbar-nav ms-auto" >
           <li class="nav-item" id="headingOne" >
-            <router-link :to="{ name: 'Home' }" data-bs-toggle="collapse" data-bs-target="#navbarNav">Home</router-link>
-=======
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item ">
             <router-link :to="{ name: 'Home' }">Home</router-link>
->>>>>>> origin
           </li>
 
           <li class="nav-item">
@@ -54,11 +44,6 @@
 </template>
 <script>
 export default {
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> origin
 };
 </script>
 
