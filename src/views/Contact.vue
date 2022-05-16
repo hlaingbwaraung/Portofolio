@@ -16,12 +16,12 @@
               <input type="text" v-model="phnumber" />
 
               <label>メッセージ <span>*</span></label>
-              <textarea rows="2" cols="20" v-model="message"></textarea>
+              <textarea v-model="message"></textarea>
               <div v-if="showDone" class="text-success">
                 ご連絡ありがとうございます。
               </div>
 
-              <button>送信</button>
+              <button class="button">送信</button>
             </form>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default {
 <style>
 #contact .container {
   width: 100%;
-  padding: 1em;
+  padding: 2em;
 }
 
 #contact .container label {

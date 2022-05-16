@@ -3,6 +3,8 @@ body {
     color: #444;
     min-height: 100vh;
     padding-top: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .chatcontainer {
@@ -22,6 +24,10 @@ body {
 .error {
     color: #ff3f80;
     font-size: 14px;
+}
+
+.spancss {
+    color: red;
 }
 
 
@@ -109,5 +115,14 @@ body {
     100% {
         clip-path: var(--slice-1);
         transform: translate(0);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .chatImg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
     }
 }

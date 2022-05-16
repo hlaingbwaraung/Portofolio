@@ -1,6 +1,6 @@
 <template>
-  <h1>Post lists</h1>
-  <div class="pb-5" v-for="post in posts" :key="post.id">
+  <h1>ブログリスト</h1>
+  <div v-for="post in posts" :key="post.id">
     <SinglePost :post="post"></SinglePost>
   </div>
 </template>

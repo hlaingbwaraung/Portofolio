@@ -1,24 +1,24 @@
 <template>
   <footer class="text-center text-lg-start">
-   <div>
+    <div>
       <div class="container-fluid">
-      <div class="container d-flex justify-content-center py-5">
-        <i class="sns bi bi-facebook"></i>
+        <div class="container d-flex justify-content-center py-5">
+          <i class="sns bi bi-facebook"></i>
 
-        <i class="sns bi bi-youtube"></i>
+          <i class="sns bi bi-youtube"></i>
 
-        <i class="sns bi bi-instagram"></i>
+          <i class="sns bi bi-instagram"></i>
 
-        <i class="sns bi bi-twitter"></i>
-      </div>
+          <i class="sns bi bi-twitter"></i>
+        </div>
 
-      <div class="fs-6 text-center text-white p-3">
-        Copyright ©2022 All rights reserved | Created with
-        <i class="bi bi-balloon-heart"></i> by
-        <span>Yaruki.com</span>
+        <div class="fs-6 text-center text-white p-3">
+          Copyright ©2022 All rights reserved | Created with
+          <i class="bi bi-balloon-heart"></i> by
+          <span>AUNG</span>
+        </div>
       </div>
     </div>
-   </div>
   </footer>
 </template>
 
@@ -29,7 +29,7 @@ export default {};
 <style scoped>
 footer {
   width: 100%;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 .sns {
   margin: 10px;

@@ -1,10 +1,13 @@
 <template>
   <div class="post">
     <router-link :to="{ name: 'Detail', params: { id: post.id } }">
-      <div class="card" style="max-width: 800px">
+      <div class="card" style="max-width: 900px">
         <div class="row g-0">
           <div class="col-md-6">
-            <img :src="post.picture" class="img-fluid rounded-start" />
+            <img
+              :src="post.picture"
+              class="sgpostImg img-fluid rounded mx-auto d-block"
+            />
           </div>
           <div class="col-md-6">
             <div class="card-body">
@@ -29,7 +32,7 @@ export default {
   props: ["post"],
   setup(props) {
     let cutPostBody = computed(() => {
-      return props.post.body.substring(0, 50) + "....";
+      return props.post.body.substring(0, 80) + "....";
     });
     return { cutPostBody };
   },
@@ -38,12 +41,32 @@ export default {
 
 <style>
 .post {
-  margin: 0 40px 30px;
+  margin: 0 10px 30px;
   padding-bottom: 30px;
   border-bottom: 1px dashed #e7e7e7;
 }
-.card-title,.card-body{
+.card {
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 3px 3px 3px rgb(90, 89, 89);
+  transform: translateY(-8px);
+}
+.card-title {
+  font-weight: 600;
+}
+.card-title,
+.card-body {
   color: black;
 }
-
+.sgpostImg {
+  width: 400px;
+  height: 300px;
+  padding: 15px;
+}
+@media only screen and (max-width: 1200px) {
+  .sgpostImg {
+    height: 200px;
+  }
+}
 </style>

@@ -2,23 +2,26 @@
   <div>
     <Navbar></Navbar>
     <router-view />
+    <ScrolltoTop></ScrolltoTop>
     <Footer></Footer>
   </div>
 </template>
 <script>
+import ScrolltoTop from "./components/ScrolltoTop";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 export default {
   components: {
+    ScrolltoTop,
     Footer,
-    Navbar
+    Navbar,
   },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

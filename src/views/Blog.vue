@@ -1,25 +1,35 @@
 <template>
- <div>
-   <div class="blogtop">
-    <h1>Blog Page</h1>
-    <input  class="input" type="text" placeholder="Search Blog" v-model="search">
- </div>
-  <div class="blog container">
-    <div v-if="error">
-      {{ error }}
+  <div>
+    <div class="blogtop">
+      <h1>ブログ</h1>
+      <input
+        class="input"
+        type="text"
+        placeholder="ブログを探す"
+        v-model="search"
+      />
     </div>
-    <div v-if="posts.length > 0" class="row">
-      <div class="col-md-8">
-        <PostsList :posts="filteredSearch"></PostsList>
-        <div v-if="filteredSearch.length <= 0" class="mx-auto alert alert-danger">Sry,We not found your wanted blog !</div>
+    <div class="blog container">
+      <div v-if="error">
+        {{ error }}
       </div>
-      <div class="col-md-4 order-first order-md-last"><TagCloud :posts="posts"></TagCloud></div>
+      <div v-if="posts.length > 0" class="row">
+        <div class="col-md-8">
+          <PostsList :posts="filteredSearch"></PostsList>
+          <div
+            v-if="filteredSearch.length <= 0"
+            class="mx-auto alert alert-danger"
+          >
+            Sry,We not found your wanted blog !
+          </div>
+        </div>
+        <div class="col-md-4 order-first order-md-last">
+          <TagCloud :posts="posts"></TagCloud>
+        </div>
+      </div>
+      <div v-else><Spinner></Spinner></div>
     </div>
-    <div v-else><Spinner></Spinner></div>
   </div>
- </div>
-  
-
 </template>
 
 <script>
@@ -28,7 +38,7 @@ import Navbar from "../components/Navbar";
 import Spinner from "../components/Spinner";
 import PostsList from "../components/PostsList";
 import getPosts from "../composables/getPosts";
-import { computed, ref } from '@vue/runtime-core';
+import { computed, ref } from "@vue/runtime-core";
 
 export default {
   components: {
@@ -36,33 +46,33 @@ export default {
     Navbar,
     Spinner,
     PostsList,
-  }, 
+  },
 
   setup() {
     let { posts, error, load } = getPosts();
-    let search=ref("");
+    let search = ref("");
     load();
 
-    let filteredSearch = computed(()=>{
-   return posts.value.filter((post)=>{
-     return post.title.includes(search.value)
-   })
- })
-    
-    return { posts, error,search,filteredSearch};
+    let filteredSearch = computed(() => {
+      return posts.value.filter((post) => {
+        return post.title.includes(search.value);
+      });
+    });
+
+    return { posts, error, search, filteredSearch };
   },
 };
 </script>
 <style>
-.blogtop{
+.blogtop {
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
 }
-.blogtop input{
- border: 1px solid rgb(156, 156, 156);
- border-radius: 5px;
+.blogtop input {
+  border: 1px solid rgb(156, 156, 156);
+  border-radius: 5px;
 }
 .blog {
   max-width: 1200px;
@@ -75,7 +85,7 @@ export default {
   gap: 20px;
 } */
 .pill {
-     background: #eee;
+  background: #eee;
   border-radius: 3px 0 0 3px;
   color: #999;
   display: inline-block;
@@ -86,12 +96,12 @@ export default {
   margin: 0 10px 10px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
-  }
- .pill::before {
+}
+.pill::before {
   background: #fff;
   border-radius: 10px;
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
-  content: '';
+  content: "";
   height: 6px;
   left: 10px;
   position: absolute;
@@ -104,7 +114,7 @@ export default {
   border-bottom: 13px solid transparent;
   border-left: 10px solid #eee;
   border-top: 13px solid transparent;
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
@@ -116,12 +126,11 @@ export default {
 }
 
 .pill:hover::after {
-   border-left-color: rgb(169, 169, 169); 
+  border-left-color: rgb(169, 169, 169);
 }
-.alert{
+.alert {
   width: 500px;
   align-items: center;
   justify-content: center;
-  
 }
 </style>

@@ -2,28 +2,27 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img src="../photo/login.png" class="img-fluid rounded-start" />
+        <img src="../photo/login.png" class="chatImg img-fluid" />
       </div>
       <div class="col-md-6">
-        <h1 class="text-center">Log In</h1>
-        <br />
+        <h1 class="text-center">ログイン</h1>
 
         <form @submit.prevent="login">
           <div class="form-group">
             <input
               type="email"
               class="form-control"
-              placeholder="Email"
+              placeholder="メール"
               v-model="email"
             />
             <input
               type="password"
               class="form-control"
-              placeholder="password"
+              placeholder="パスワード"
               v-model="password"
             />
             <div class="error" v-if="error">{{ error }}</div>
-            <button class="button">Log In</button>
+            <button class="button">ログイン</button>
           </div>
         </form>
       </div>

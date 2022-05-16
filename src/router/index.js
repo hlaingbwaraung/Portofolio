@@ -9,7 +9,6 @@ import Chat from "../views/Chat.vue"
 import Chatroom from "../views/Chatroom.vue"
 import { auth } from "../firebase/config"
 
-
 import "../assets/global.css"
 
 const routes = [{

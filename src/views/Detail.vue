@@ -1,6 +1,6 @@
 <template>
   <div v-if="post" class="detailpost">
-    <img :src="post.picture" class="img-fluid rounded-start" />
+    <img :src="post.picture" class="detailImg img-fluid rounded-start" />
     <h2>{{ post.title }}</h2>
     <p>{{ post.body }}</p>
 
@@ -38,7 +38,7 @@ export default {
 
 <style>
 .detailpost {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 50px;
 }
@@ -50,9 +50,20 @@ export default {
 }
 .detailpost p {
   width: 100%;
-  margin: 30px;
-  font-size: 20px;
-  letter-spacing: 1px;
+  padding: 20px;
+  font-size: 1rem;
   line-height: 2.6;
+}
+.detailImg {
+  width: 100%;
+}
+@media only screen and (max-width: 900px) {
+  .detailpost {
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .detailImg {
+    border-radius: 10px;
+  }
 }
 </style>

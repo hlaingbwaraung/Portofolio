@@ -13,7 +13,7 @@
     <label>Body</label>
     <textarea required v-model="body"></textarea>
 
-    <label>Tags(Hit enter to ad a tag)</label>
+    <label>Tags(Hit enter to add a tag)</label>
     <input type="text" v-model="tag" @keydown.enter.prevent="handleKeydown" />
     <div v-for="tag in tags" :key="tag" class="pill">
       {{ tag }}
@@ -98,7 +98,6 @@ export default {
 .createcss {
   max-width: 480px;
   margin: 30px auto;
-
 }
 input,
 textarea {

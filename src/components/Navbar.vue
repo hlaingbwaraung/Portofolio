@@ -6,37 +6,42 @@
       <router-link :to="{ name: 'Home' }" class="navbar-brand"
         ><img src="../photo/logo.png" width="50" height="50"
       /></router-link>
+      <h4>APOLLO</h4>
       <button
-        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed "
+        class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
-        :class="{active:collapsed}"
+        :class="{ active: collapsed }"
       >
         <span class="toggler-icon top-bar"></span>
         <span class="toggler-icon middle-bar"></span>
         <span class="toggler-icon bottom-bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav" :class="{active:show}">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNav"
+        :class="{ active: show }"
+      >
         <ul class="navbar-nav ms-auto" @click="toggleNav">
-          <li class="nav-item" >
-            <router-link :to="{ name: 'Home' }">Home</router-link>
+          <li class="nav-item">
+            <router-link :to="{ name: 'Home' }">HOME</router-link>
           </li>
 
           <li class="nav-item">
-            <router-link :to="{ name: 'Blog' }">Blog</router-link>
+            <router-link :to="{ name: 'Blog' }">BLOG</router-link>
           </li>
           <li class="nav-item">
-            <router-link :to="{ name: 'Contact' }">Contact</router-link>
+            <router-link :to="{ name: 'Contact' }">CONTACT</router-link>
           </li>
           <li class="nav-item">
-            <router-link :to="{ name: 'Chat' }">Chat</router-link>
+            <router-link :to="{ name: 'Chat' }">CHAT</router-link>
           </li>
           <li class="nav-item">
-            <router-link :to="{ name: 'Create' }">Create</router-link>
+            <router-link :to="{ name: 'Create' }">CREATE</router-link>
           </li>
         </ul>
       </div>
@@ -48,15 +53,15 @@ export default {
   data() {
     return {
       show: false,
-      collapsed:true
+      collapsed: true,
     };
   },
-  methods:{
-      toggleNav(){
-        this.show = !this.show,
-        this.collapsed = !this.collapsed
-      }
-  }
+  methods: {
+    toggleNav() {
+      (this.show = !this.show), (this.collapsed = !this.collapsed);
+      window.scrollTo(0, 0);
+    },
+  },
 };
 </script>
 
@@ -64,16 +69,26 @@ export default {
 .navbar {
   padding: 20px;
 }
-.navbar a {
-  font-size: 20px;
-  color: rgb(70, 70, 70);
-  text-decoration: none;
-  margin-left: 20px;
+.nav-item {
+  transition: 0.5s;
 }
-
+.nav-item a {
+  font-size: 20px;
+  color: rgb(99, 99, 99);
+  margin: 5px;
+  padding: 15px;
+  text-decoration: none;
+}
+.nav-item a:hover {
+  color: #000a0f;
+}
 .navbar a.router-link-active {
-  color: rgb(255, 6, 6);
+  color: #ff3153;
   font-weight: bold;
+}
+.nav-item:hover {
+  border-radius: 5px;
+  transform: translateY(-2px);
 }
 .navbar-toggler {
   width: 20px;
@@ -162,32 +177,24 @@ export default {
   background-color: aqua;
   font-size: 80px;
 }
-@media only screen and (max-width: 990px) {
-  .navbar a {
-    z-index: 1;
-    font-size: 40px;
-  }
-  .nav-item {
-    text-align: center;
-    padding: 30px;
-  }
-  .nav-item:hover {
-    background-color: #d8d8d8;
-    border-radius: 10px;
-  }
+h4 {
+  font-family: serif;
+  padding-top: 10px;
 }
-
 @media only screen and (max-width: 990px) {
   .navbar-collapse {
     padding: 0;
   }
 
   .navbar a {
-    font-size: 40px;
+    font-size: 30px;
   }
   .nav-item {
     text-align: center;
     padding: 30px;
+  }
+  h4 {
+    display: none;
   }
 }
 </style>

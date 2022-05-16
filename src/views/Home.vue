@@ -4,7 +4,7 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-md-6 p-5">
-          <h2><span>やる気</span>とは？</h2>
+          <h2><span class="spancss">APOLLO</span>とは？</h2>
           <p>
             &nbsp;&nbsp;&nbsp;&nbsp;世の中にいる戦争や貧困などの様々な理由で独学に大変な方と子供達を向けて完全<span
               >無料</span
@@ -100,21 +100,10 @@ export default {
 <style>
 #banner {
   padding-top: 20px;
-  background: -webkit-linear-gradient(
-    360deg,
-    #dee1e1 10%,
-    #f4f4f4 360%
-  ); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(
-    360deg,
-    #dee1e1 10%,
-    #f4f4f4 360%
-  ); /* FF3.6+ */
-  background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%); /* W3C */
+background: #c8d8e4;
 }
-
 h2 {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
 }
 h1 {

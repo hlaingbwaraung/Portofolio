@@ -61,4 +61,13 @@ span {
   cursor: pointer;
   color: rgb(44, 150, 243);
 }
+@media only screen and (max-width: 767px) {
+  .container {
+    padding: 0;
+    margin-top: 0;
+  }
+  img {
+    width: 100px;
+  }
+}
 </style>

@@ -2,32 +2,28 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img src="../photo/login.png" class="img-fluid rounded-start" />
+        <img src="../photo/login.png" class="chatImg img-fluid rounded-start" />
       </div>
       <div class="col-md-6">
-        <h1 class="text-center">Sign Up</h1>
+        <h1 class="text-center">アカウント登録</h1>
         <form @submit.prevent="signUp">
           <div class="form-group">
-            <input
-              type="text"
-              placeholder="Display Name"
-              v-model="displayName"
-            />
+            <input type="text" placeholder="名前" v-model="displayName" />
 
             <input
               type="email"
               class="form-control"
-              placeholder="Email"
+              placeholder="メール"
               v-model="email"
             />
             <input
               type="password"
               class="form-control"
-              placeholder="password"
+              placeholder="パスワード"
               v-model="password"
             />
             <div class="error" v-if="error">{{ error }}</div>
-            <button class="button">Sign Up</button>
+            <button class="button">登録</button>
           </div>
         </form>
       </div>
