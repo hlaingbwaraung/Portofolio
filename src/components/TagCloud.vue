@@ -1,6 +1,6 @@
 <template>
   <div class="tag-cloud">
-    <h3>タグ クラウド</h3>
+    <h3>Tag Cloud</h3>
     <div v-for="tag in uniqueTags" :key="tag">
       <router-link :to="{ name: 'Tag', params: { tag } }">
         {{ tag }}

@@ -1,8 +1,12 @@
 <template>
-  <h1>ブログリスト</h1>
-  <div v-for="post in posts" :key="post.id">
+ 
+ <div class="container">
+   <div class="row justify-content-md-center">
+       <div  class="col-md-4" v-for="post in posts" :key="post.id">
     <SinglePost :post="post"></SinglePost>
   </div>
+   </div>
+ </div>
 </template>
 
 <script>

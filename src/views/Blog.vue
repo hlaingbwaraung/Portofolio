@@ -14,7 +14,7 @@
         {{ error }}
       </div>
       <div v-if="posts.length > 0" class="row">
-        <div class="col-md-8">
+        <div class="col-md-10">
           <PostsList :posts="filteredSearch"></PostsList>
           <div
             v-if="filteredSearch.length <= 0"
@@ -23,7 +23,7 @@
             Sry,We not found your wanted blog !
           </div>
         </div>
-        <div class="col-md-4 order-first order-md-last">
+        <div class="col-md-2 order-first order-md-last">
           <TagCloud :posts="posts"></TagCloud>
         </div>
       </div>
@@ -75,9 +75,9 @@ export default {
   border-radius: 5px;
 }
 .blog {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 10px;
+  padding-bottom: 50px;
 }
 /* .layout {
   display: grid;

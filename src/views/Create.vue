@@ -1,6 +1,6 @@
 <template>
-  <form @submit.prevent="addPost" class="createcss">
-    <h1 class="">Create Post</h1>
+  <form @submit.prevent="addPost" class="createcss pb-5">
+    <h1>Create Post</h1>
 
     <img :src="picture" />
     <br />

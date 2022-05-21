@@ -1,11 +1,13 @@
 <template>
-  <div class="tag container">
+  <div class="container">
     <div v-if="error">
       {{ error }}
     </div>
     <div v-if="posts.length" class="row">
-      <div class="col-md-8"><PostsList :posts="filteredPosts"></PostsList></div>
-      <div class="col-md-4 order-first order-md-last">
+      <div class="col-md-10 p-3">
+        <PostsList :posts="filteredPosts"></PostsList>
+      </div>
+      <div class="col-md-2 order-first order-md-last">
         <TagCloud :posts="posts"></TagCloud>
       </div>
     </div>
@@ -37,10 +39,8 @@ export default {
 };
 </script>
 
-<style>
-.tag {
-  max-width: 1200px;
-  margin: 0 auto;
+<style scoped>
+.container {
+  margin: 50px auto;
 }
-
 </style>

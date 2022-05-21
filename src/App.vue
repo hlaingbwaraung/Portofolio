@@ -1,7 +1,12 @@
 <template>
   <div>
     <Navbar></Navbar>
-    <router-view />
+    <transition
+    mode="out-in"
+    enter-active-class="animate__animated animate__fadeIn"
+    leave-active-class="animate__animated animate__fadeOut">
+      <router-view/>
+    </transition>
     <ScrolltoTop></ScrolltoTop>
     <Footer></Footer>
   </div>
@@ -25,6 +30,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  
 }
 #nav a.router-link-exact-active {
   color: #42b983;

@@ -4,7 +4,10 @@
     <h2>{{ post.title }}</h2>
     <p>{{ post.body }}</p>
 
-    <button class="m-2 btn btn-danger" @click="deletePost">Delete</button>
+    <!-- <button class="m-2 btn btn-danger" @click="deletePost">Delete</button> -->
+    <router-link :to="{ name: 'Blog' }" class="btn btn-primary"
+      >Back</router-link
+    >
   </div>
   <div v-else>
     <Spinner></Spinner>
@@ -38,7 +41,7 @@ export default {
 
 <style>
 .detailpost {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 50px;
 }
