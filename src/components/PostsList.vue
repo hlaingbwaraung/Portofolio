@@ -2,7 +2,7 @@
  
  <div class="container">
    <div class="row justify-content-md-center">
-       <div  class="col-md-4" v-for="post in posts" :key="post.id">
+       <div  class="col-lg-4 col-md-6" v-for="post in posts" :key="post.id">
     <SinglePost :post="post"></SinglePost>
   </div>
    </div>

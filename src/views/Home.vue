@@ -67,7 +67,7 @@
               </li>
               <li>
                 <i class="bi bi-person-video3"></i
-                >&nbsp;&nbsp;&nbsp;&nbsp;週３回マンツーマンメンタリング
+                >&nbsp;&nbsp;&nbsp;&nbsp;マンツーマンメンタリング
               </li>
               <li>
                 <i class="bi bi-chat-dots"></i

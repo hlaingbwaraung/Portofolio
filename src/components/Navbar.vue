@@ -3,7 +3,10 @@
     class="navbar nav-default fixed-top navbar-expand-lg navbar-light bg-light"
   >
     <div class="container">
-      <router-link :to="{ name: 'Home' }" class="navbar-brand"
+      <router-link
+        :to="{ name: 'Home' }"
+        class="navbar-brand"
+        @click="toggleNav"
         ><img src="../photo/logo.png" width="50" height="50"
       /></router-link>
       <h4>APOLLO</h4>
@@ -40,9 +43,9 @@
           <li class="nav-item">
             <router-link :to="{ name: 'Chat' }">CHAT</router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link :to="{ name: 'Create' }">CREATE</router-link>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -59,7 +62,7 @@ export default {
   methods: {
     toggleNav() {
       (this.show = !this.show), (this.collapsed = !this.collapsed);
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     },
   },
 };

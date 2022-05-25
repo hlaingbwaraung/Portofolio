@@ -39,8 +39,8 @@ button {
   position: fixed;
   right: 14px;
   bottom: 14px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   line-height: 32px;
   text-align: center;
   border-radius: 10px;
