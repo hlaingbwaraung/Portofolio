@@ -78,8 +78,8 @@ export default {
 .sgpostImg{
   height: 150px;
 }
-
+/* 
 @media only screen and (max-width: 1200px) {
   
-}
+} */
 </style>

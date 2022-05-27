@@ -22,7 +22,9 @@ import { useRoute, useRouter } from "vue-router";
 import { db } from "../firebase/config";
 
 export default {
-  components: { Spinner },
+  components: {
+    Spinner,
+  },
   props: ["id"],
   setup(props) {
     let route = useRoute();

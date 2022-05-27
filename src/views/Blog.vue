@@ -108,7 +108,6 @@ export default {
   width: 6px;
   top: 10px;
 }
-
 .pill::after {
   background: #fff;
   border-bottom: 13px solid transparent;
@@ -118,6 +117,10 @@ export default {
   position: absolute;
   right: 0;
   top: 0;
+}
+.pill a{
+   color: rgb(87, 85, 85);
+  text-decoration: none;
 }
 
 .pill:hover {

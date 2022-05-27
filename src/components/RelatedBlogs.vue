@@ -32,6 +32,6 @@ export default {
 
 <style scoped>
 #banner{
-  background-color: white;
+  background-color: #ffffff;;
 }
 </style>

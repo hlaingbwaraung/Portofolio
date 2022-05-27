@@ -26,9 +26,9 @@
 
     <section id="services">
       <div class="container text-center animate__animated animate__fadeInUp">
-        <h1 class="title animated">サービス</h1>
+        <h1 class="title">サービス</h1>
         <div class="row text-center p-5">
-          <div class="col-md-4 services animated d-1">
+          <div class="col-md-4 services d-1">
             <img src="../photo/service1.png" class="service-img" />
             <h4>日本語コース</h4>
             <div id="box"></div>
@@ -36,7 +36,7 @@
               漢字、聴解、ビジネス会話、IT用語など様々な知識を日本にいる方、また日本人がメンタリングいたします。
             </p>
           </div>
-          <div class="col-md-4 services animated d-2">
+          <div class="col-md-4 services d-2">
             <img src="../photo/service2.png" class="service-img" />
             <h4>プログラミングコース</h4>
             <p>
@@ -44,7 +44,7 @@
               メンタリングいたします。
             </p>
           </div>
-          <div class="col-md-4 services animated d-3">
+          <div class="col-md-4 services d-3">
             <img src="../photo/service3.png" class="service-img" />
             <h4>キャリアサポート</h4>
             <p>
@@ -57,9 +57,9 @@
 
     <section id="about-us">
       <div class="container">
-        <h1 class="title text-center animated">学習方法</h1>
+        <h1 class="title text-center">学習方法</h1>
         <div class="row align-items-center tex-center p-2">
-          <div class="col-md-6 animated mt-2 font-weight-bold d-1">
+          <div class="col-md-6 mt-2 font-weight-bold d-1">
             <ul>
               <li>
                 <i class="bi bi-book-fill"></i
@@ -79,20 +79,25 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-6 order-first order-md-last animated d-2">
+          <div class="col-md-6 order-first order-md-last d-2">
             <img src="../photo/gakushu.png" class="img-fluid mt-2" />
           </div>
         </div>
       </div>
     </section>
     <RelatedBlogs></RelatedBlogs>
+    <Patner></Patner>
   </div>
 </template>
 
 <script>
 import RelatedBlogs from "../components/RelatedBlogs";
+import Patner from "../components/Patner";
 export default {
-  components: { RelatedBlogs },
+  components: {
+    RelatedBlogs,
+    Patner,
+  },
 };
 </script>
 
