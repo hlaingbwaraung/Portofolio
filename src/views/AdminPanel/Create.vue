@@ -1,4 +1,7 @@
 <template>
+  <h1 class="text-center">admin panel</h1>
+
+<AdminNav></AdminNav>
   <form @submit.prevent="addPost" class="createcss pb-5">
     <h1>Create Post</h1>
 
@@ -24,11 +27,13 @@
 </template>
 
 <script>
+import AdminNav from '../../components/Admin/AdminNav'
 import { ref } from "@vue/reactivity";
 import { useRouter } from "vue-router";
-import { firebase, db, timestamp } from "../firebase/config";
+import { firebase, db, timestamp } from "../../firebase/config";
 
 export default {
+  components: { AdminNav },
   setup() {
     let router = useRouter(); //this.$router
     let title = ref("");

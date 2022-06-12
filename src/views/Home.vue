@@ -87,6 +87,7 @@
     </section>
     <RelatedBlogs></RelatedBlogs>
     <Patner></Patner>
+    
   </div>
 </template>
 

@@ -43,9 +43,9 @@
           <li class="nav-item">
             <router-link :to="{ name: 'Chat' }">CHAT</router-link>
           </li>
-          <!-- <li class="nav-item">
-            <router-link :to="{ name: 'Create' }">CREATE</router-link>
-          </li> -->
+          <li class="nav-item">
+            <router-link :to="{ name: 'Admin' }">Admin</router-link>
+          </li>
         </ul>
       </div>
     </div>

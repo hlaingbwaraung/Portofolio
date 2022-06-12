@@ -12,9 +12,11 @@
   <div v-else>
     <Spinner></Spinner>
   </div>
+
 </template>
 
 <script>
+
 import Spinner from "../components/Spinner";
 import getPost from "../composables/getPost";
 import { useRoute, useRouter } from "vue-router";
@@ -23,8 +25,7 @@ import { db } from "../firebase/config";
 
 export default {
   components: {
-    Spinner,
-  },
+  Spinner },
   props: ["id"],
   setup(props) {
     let route = useRoute();
